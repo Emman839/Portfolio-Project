@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Judiza Susaya Chua | Accounting Professional</title>
+<meta name="description" content="Portfolio of Judiza Susaya Chua, Accounting Professional with 8 years of experience in accounts receivable, bookkeeping and financial reporting." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Homemade+Apple&display=swap" rel="stylesheet" />
+
+<!-- Tailwind CSS v4 (browser build) -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style type="text/tailwindcss">
+  @theme {
+    --color-cream: #f7f6f1;
+    --color-paper: #fbfaf6;
+    --color-forest: #1f3a2e;
+    --color-forest-deep: #17291f;
+    --color-sage: #8ea58c;
+    --color-sage-soft: #dfe7da;
+    --color-ink: #2b3a33;
+    --color-muted: #6b7a72;
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-script: "Homemade Apple", cursive;
+  }
+  html { background: var(--color-cream); }
+  body { font-family: var(--font-sans); color: var(--color-ink); overflow-x: hidden; }
+  .font-serif { font-family: var(--font-serif); }
+  .font-script { font-family: var(--font-script); }
+
+  .glass {
+    background: linear-gradient(145deg, rgba(255,255,255,.85), rgba(240,244,236,.7));
+    border: 1px solid rgba(142,165,140,.28);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px -25px rgba(31,58,46,.35);
+  }
+  .btn-primary {
+    display:inline-flex; align-items:center; gap:.6rem;
+    background: var(--color-forest); color:#fff; padding:.8rem 1.6rem;
+    border-radius:999px; font-size:.8rem; font-weight:500; letter-spacing:.02em;
+    transition: background .3s, box-shadow .3s;
+    box-shadow: 0 12px 25px -12px rgba(31,58,46,.7);
+  }
+  .btn-primary:hover { background: var(--color-forest-deep); }
+  .btn-outline {
+    display:inline-flex; align-items:center; gap:.6rem;
+    border:1px solid var(--color-forest); color: var(--color-forest);
+    padding:.8rem 1.6rem; border-radius:999px; font-size:.8rem; font-weight:500;
+    transition: background .3s, color .3s;
+  }
+  .btn-outline:hover { background: var(--color-forest); color:#fff; }
+
+  .nav-link { position:relative; font-size:.75rem; color: var(--color-ink); padding:.5rem 0; }
+  .nav-link::after { content:""; position:absolute; left:0; bottom:0; height:2px; width:0; background:var(--color-forest); transition: width .3s; }
+  .nav-link:hover::after, .nav-link.active::after { width:100%; }
+
+  .dot-grid-light { background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px); background-size: 26px 26px; }
+  .btn-gold {
+    display:inline-flex; align-items:center; gap:.6rem;
+    background: linear-gradient(135deg,#e6c987,#c9a24f); color:#17291f; padding:.8rem 1.6rem;
+    border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.02em;
+    box-shadow: 0 14px 30px -12px rgba(212,175,106,.65);
+    transition: filter .3s, box-shadow .3s;
+  }
+  .btn-gold:hover { filter: brightness(1.08); box-shadow: 0 18px 36px -12px rgba(212,175,106,.85); }
+  .btn-ghost {
+    display:inline-flex; align-items:center; gap:.6rem;
+    border:1px solid rgba(255,255,255,.45); color:#fff; padding:.8rem 1.6rem;
+    border-radius:999px; font-size:.8rem; font-weight:500;
+    transition: background .3s, color .3s, border-color .3s;
+  }
+  .btn-ghost:hover { background:#fff; color:#17291f; border-color:#fff; }
+  .gold-text { background: linear-gradient(120deg,#f1dca3,#d4af6a 45%,#b98f3e); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* nav over the dark hero */
+  #nav.on-dark .nav-link { color:#fff; }
+  #nav.on-dark .nav-link::after { background:#d4af6a; }
+  #nav.on-dark .nav-logo { color:#fff; }
+  #nav.on-dark .nav-logo-sub { color:rgba(255,255,255,.85); }
+  #nav.on-dark .nav-cta { background: linear-gradient(135deg,#e6c987,#c9a24f); color:#17291f; }
+  #nav.on-dark #menuBtn span { background:#fff; }
+  .dot-grid { background-image: radial-gradient(rgba(142,165,140,.35) 1px, transparent 1px); background-size: 22px 22px; }
+  .tl-card { transition: transform .35s, box-shadow .35s; }
+  .tl-card:hover { transform: translateY(-4px); box-shadow: 0 25px 40px -25px rgba(31,58,46,.45); }
+  .bullet li { position:relative; padding-left:.9rem; }
+  .bullet li::before { content:""; position:absolute; left:0; top:.55em; width:4px; height:4px; border-radius:50%; background: var(--color-sage); }
+</style>
+</head>
+
+<body class="bg-cream antialiased">
+
+<!-- Scroll progress -->
+<div id="progress" class="fixed top-0 left-0 h-[3px] w-full bg-forest origin-left scale-x-0 z-[60]"></div>
+
+<!-- SVG sprite -->
+<svg width="0" height="0" class="absolute">
+  <defs>
+    <symbol id="i-laptop" viewBox="0 0 120 90">
+      <rect x="18" y="8" width="84" height="55" rx="6" fill="#1f3a2e"/>
+      <rect x="24" y="14" width="72" height="43" rx="3" fill="#2f5440"/>
+      <path d="M8 68h104l-8 12H16z" fill="#d9dfd4" stroke="#8ea58c"/>
+    </symbol>
+    <symbol id="i-calc" viewBox="0 0 80 100">
+      <rect x="4" y="4" width="72" height="92" rx="9" fill="#cfd8c9" stroke="#8ea58c" stroke-width="2"/>
+      <rect x="12" y="12" width="56" height="20" rx="3" fill="#f5f7f1"/>
+      <g fill="#fbfaf6" stroke="#8ea58c">
+        <rect x="12" y="42" width="14" height="12" rx="2"/><rect x="33" y="42" width="14" height="12" rx="2"/><rect x="54" y="42" width="14" height="12" rx="2"/>
+        <rect x="12" y="60" width="14" height="12" rx="2"/><rect x="33" y="60" width="14" height="12" rx="2"/><rect x="54" y="60" width="14" height="12" rx="2"/>
+        <rect x="12" y="78" width="14" height="12" rx="2"/><rect x="33" y="78" width="14" height="12" rx="2"/>
+      </g>
+      <rect x="54" y="78" width="14" height="12" rx="2" fill="#1f3a2e"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 100 120">
+      <path d="M50 118V60" stroke="#4d6b57" stroke-width="3" fill="none"/>
+      <path d="M50 70C20 70 8 45 12 18c28 2 42 20 38 52z" fill="#6f8f73"/>
+      <path d="M50 80c26 0 40-22 38-48-26 2-40 20-38 48z" fill="#8ea58c"/>
+      <path d="M50 50C34 46 30 28 36 8c18 6 22 26 14 42z" fill="#4d6b57"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 90 110">
+      <rect x="4" y="4" width="82" height="102" rx="6" fill="#fbfaf6" stroke="#8ea58c" stroke-width="2"/>
+      <g stroke="#b9c7b4" stroke-width="3" stroke-linecap="round"><path d="M18 26h54M18 42h54M18 58h38M18 74h46"/></g>
+      <rect x="18" y="86" width="26" height="10" rx="3" fill="#1f3a2e"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 100 70">
+      <rect width="100" height="70" rx="6" fill="#2f5440"/>
+      <g fill="#cfe0c8"><rect x="14" y="40" width="10" height="20"/><rect x="30" y="30" width="10" height="30"/><rect x="46" y="36" width="10" height="24"/><rect x="62" y="20" width="10" height="40"/><rect x="78" y="12" width="10" height="48"/></g>
+      <path d="M12 34L40 22 58 28 90 8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-folder" viewBox="0 0 70 100">
+      <rect x="4" y="4" width="62" height="92" rx="5" fill="#2a4a3a"/>
+      <rect x="14" y="14" width="42" height="14" rx="2" fill="#f1efe4"/>
+      <rect x="4" y="4" width="10" height="92" rx="3" fill="#17291f"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="42" fill="#5f8a6c"/>
+      <path d="M22 38c10-12 22-6 28-14 8 6 4 16-6 18s-14 14-8 24c-8-6-16-16-14-28zM60 56c10-6 20 0 22 10-8 14-22 18-30 14 6-6 0-18 8-24z" fill="#a8c4a4"/>
+      <ellipse cx="50" cy="50" rx="42" ry="14" fill="none" stroke="#fff" stroke-opacity=".4"/>
+    </symbol>
+    <symbol id="i-coins" viewBox="0 0 80 80">
+      <g fill="#d9b869" stroke="#a88a3a" stroke-width="2">
+        <ellipse cx="30" cy="62" rx="22" ry="8"/><path d="M8 54v8a22 8 0 0 0 44 0v-8z"/>
+        <ellipse cx="30" cy="54" rx="22" ry="8" fill="#ecd08a"/>
+        <ellipse cx="52" cy="34" rx="20" ry="7" fill="#ecd08a"/><path d="M32 28v6a20 7 0 0 0 40 0v-6z"/>
+      </g>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="max-w-[1200px] mx-auto px-6 h-[64px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <span class="nav-logo font-serif text-[2rem] leading-none font-semibold text-forest tracking-tight">JC</span>
+      <span class="nav-logo nav-logo-sub hidden sm:block text-[.68rem] tracking-[.3em] text-forest uppercase">Judiza Susaya Chua</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="resume.pdf" download class="nav-cta btn-primary !py-3 hidden md:inline-flex">Download CV
+      <svg class="w-4 h-4"><use href="#i-download"/></svg></a>
+    <button id="menuBtn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Menu">
+      <span class="w-6 h-[2px] bg-forest"></span><span class="w-6 h-[2px] bg-forest"></span><span class="w-6 h-[2px] bg-forest"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden bg-paper/95 backdrop-blur border-t border-sage-soft px-6 py-5 space-y-4 text-sm">
+    <a href="#home" class="block">Home</a><a href="#about" class="block">About</a><a href="#experience" class="block">Experience</a>
+    <a href="#skills" class="block">Skills</a><a href="#education" class="block">Education</a><a href="#contact" class="block">Contact</a>
+  </div>
+</header>
+
+<!-- ============ HERO (clean white) ============ -->
+<section id="home" class="relative overflow-hidden bg-gradient-to-br from-paper via-cream to-sage-soft/40 lg:h-[39vw] lg:min-h-[500px]">
+  <div class="absolute inset-0 dot-grid opacity-30 pointer-events-none"></div>
+  <!-- faint diagonal light shape -->
+  <div class="absolute -left-[10%] top-[18%] w-[60%] h-[70%] bg-white/50 -skew-x-[28deg] pointer-events-none"></div>
+
+  <!-- TEXT -->
+  <div class="relative z-10 px-6 pt-[96px] pb-10 lg:p-0 lg:absolute lg:left-[9.5vw] lg:top-[64px] lg:bottom-0 lg:w-[38vw] lg:flex lg:flex-col lg:justify-center">
+    <p class="hero-in text-[.68rem] lg:text-[max(.6rem,.62vw)] tracking-[.35em] uppercase text-forest/80 mb-3">Accounting Professional</p>
+    <h1 class="font-serif font-semibold text-forest-deep leading-[.95] text-[3.4rem] sm:text-[4.4rem] lg:text-[clamp(3rem,4.7vw,5.6rem)]" id="heroName">
+      <span class="block overflow-hidden pb-[.08em]"><span class="name-line inline-block">Judiza Susaya</span></span>
+      <span class="block overflow-hidden pb-[.08em]"><span class="name-line inline-block">Chua</span></span>
+    </h1>
+    <p class="hero-in mt-5 lg:mt-[1.9vw] text-[.95rem] lg:text-[clamp(.85rem,1.05vw,1.1rem)] font-semibold text-forest-deep">Accounting Professional with 8 Years of Experience</p>
+    <span class="hero-in block w-6 h-[2px] bg-forest mt-4 mb-4 lg:mt-[1.3vw] lg:mb-[1.3vw]"></span>
+    <p class="hero-in text-[.85rem] leading-6 lg:leading-[1.75] lg:text-[clamp(.72rem,.93vw,.95rem)] text-ink/80 max-w-md lg:max-w-[29vw]">
+      Detail-oriented and results-driven Accountancy graduate with extensive experience in accounts receivable, bookkeeping, and financial reporting. Proficient in QuickBooks and SAP, with strong analytical skills and experience managing PH and APAC portfolios.
+    </p>
+    <div class="hero-in mt-7 lg:mt-[2.2vw] flex flex-wrap gap-3 lg:gap-[1vw]">
+      <a href="#experience" class="btn-primary magnetic !px-5 !py-3 lg:!px-[1.6vw] lg:!py-[.9vw] lg:!text-[max(.7rem,.82vw)]">View Experience <svg class="w-4 h-4"><use href="#i-arrow"/></svg></a>
+      <a href="JudizaChua.pdf" download class="btn-outline magnetic !px-5 !py-3 lg:!px-[1.6vw] lg:!py-[.9vw] lg:!text-[max(.7rem,.82vw)]">Download CV <svg class="w-4 h-4"><use href="#i-download"/></svg></a>
+    </div>
+  </div>
+
+  <!-- IMAGE (box = 680 x 476 at 1220 wide) -->
+  <div class="relative w-full aspect-[680/476] lg:aspect-auto lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[55.7%] overflow-hidden lg:overflow-visible">
+    <!-- soft sage arch -->
+    <div id="heroCircle" class="absolute left-[8.5%] top-[17%] bottom-0 w-[57%] rounded-t-full bg-gradient-to-b from-sage/70 via-sage/45 to-sage/25"></div>
+
+    <!-- your portrait (cut-out) -->
+    <img id="portrait" src="imagejdc.png" alt="Judiza Susaya Chua"
+         class="absolute z-10 bottom-0 left-[2.5%] h-[85%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_20px_30px_rgba(23,41,31,.22)]" />
+  </div>
+
+  <!-- tagline -->
+  <p id="tagline" class="font-script hidden lg:block absolute z-20 right-[3.2%] top-[19%] -rotate-[10deg] text-forest/80 leading-[1.55] text-[max(.8rem,1.15vw)]">
+    Numbers<br/><span class="ml-[.9em]">Build</span><br/><span class="ml-[.5em]">Better</span><br/><span class="ml-[1.1em]">Tomorrow</span>
+  </p>
+
+  <!-- scroll indicator -->
+  <div class="hidden lg:flex absolute left-[2.6vw] bottom-[3vw] z-10 flex-col items-center gap-3">
+    <span class="text-[.55rem] tracking-[.3em] uppercase text-muted [writing-mode:vertical-rl] rotate-180">Scroll</span>
+    <span class="w-px h-12 bg-forest/40 relative overflow-hidden"><span id="scrollDot" class="absolute top-0 left-0 w-px h-5 bg-forest"></span></span>
+  </div>
+</section>
+
+<!-- ============ ABOUT + SKILLS ============ -->
+<section id="about" class="relative py-24 bg-paper">
+  <div class="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-14">
+    <div>
+      <p class="reveal text-[.8rem] text-forest/80 mb-1">About Me</p>
+      <h2 class="reveal font-serif text-[2.6rem] text-forest-deep font-semibold leading-tight">Professional Profile</h2>
+      <p class="reveal mt-6 text-[.9rem] leading-7 text-ink/80 max-w-md">
+        Detail-oriented and results-driven Accountancy graduate with extensive experience in accounts receivable, bookkeeping, and financial reporting. Proficient in QuickBooks and SAP, with strong analytical skills and experience managing PH and APAC portfolios. Adept at preparing financial reports, aging analyses, and client communications, contributing to operational efficiency and organizational growth.
+      </p>
+      <a href="#experience" class="reveal btn-outline mt-8 !py-3">Learn More <svg class="w-4 h-4"><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div>
+      <!-- stats -->
+      <div class="grid grid-cols-3 gap-2 mb-8">
+        <div class="stat reveal flex items-center gap-3 pr-2 border-r border-sage-soft">
+          <span class="w-11 h-11 rounded-full bg-sage-soft grid place-items-center text-forest">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+          <div><p class="font-serif text-[1.6rem] leading-none text-forest-deep"><span class="count" data-to="8">0</span>+</p><p class="text-[.62rem] text-muted mt-1">Years of Experience</p></div>
+        </div>
+        <div class="stat reveal flex items-center gap-3 px-2 border-r border-sage-soft">
+          <span class="w-11 h-11 rounded-full bg-sage-soft grid place-items-center text-forest">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+          <div><p class="font-serif text-[1.4rem] leading-none text-forest-deep">PH &amp; APAC</p><p class="text-[.62rem] text-muted mt-1">Portfolios</p></div>
+        </div>
+        <div class="stat reveal flex items-center gap-3 pl-2">
+          <span class="w-11 h-11 rounded-full bg-sage-soft grid place-items-center text-forest">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
+          <div><p class="font-serif text-[1.6rem] leading-none text-forest-deep"><span class="count" data-to="100">0</span>%</p><p class="text-[.62rem] text-muted mt-1">Accuracy Focus</p></div>
+        </div>
+      </div>
+
+      <!-- skills card -->
+      <div id="skills" class="glass reveal rounded-3xl p-7 relative overflow-hidden">
+        <h3 class="font-serif text-2xl text-forest-deep font-semibold mb-5">Skills</h3>
+        <ul class="space-y-4 relative z-10 max-w-[260px]" id="skillList">
+          <li class="skill flex gap-3"><span class="ico">▣</span><div><p class="text-[.78rem] font-medium">Accounting Software</p><p class="text-[.68rem] text-muted">SAP, QuickBooks and Oracle</p></div></li>
+          <li class="skill flex gap-3"><span class="ico">▤</span><div><p class="text-[.78rem] font-medium">Financial Reporting and Bookkeeping</p></div></li>
+          <li class="skill flex gap-3"><span class="ico">◎</span><div><p class="text-[.78rem] font-medium">Accounts Receivable and Collections</p><p class="text-[.68rem] text-muted">(PH and APAC portfolios)</p></div></li>
+          <li class="skill flex gap-3"><span class="ico">▥</span><div><p class="text-[.78rem] font-medium">Aging Reports and Macros</p></div></li>
+          <li class="skill flex gap-3"><span class="ico">✉</span><div><p class="text-[.78rem] font-medium">Client Communication</p><p class="text-[.68rem] text-muted">Emails and Calls</p></div></li>
+          <li class="skill flex gap-3"><span class="ico">▦</span><div><p class="text-[.78rem] font-medium">Microsoft Office</p><p class="text-[.68rem] text-muted">Excel, Word and PowerPoint</p></div></li>
+        </ul>
+        <svg class="float absolute -right-4 bottom-4 w-52 opacity-95" data-d="2" viewBox="0 0 120 90"><use href="#i-laptop"/></svg>
+        <svg class="float absolute right-3 top-3 w-16" data-d="1"><use href="#i-leaf"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .skill .ico{width:26px;height:26px;border-radius:8px;background:#1f3a2e;color:#fff;display:grid;place-items:center;font-size:.75rem;flex:none}
+</style>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="relative py-24 bg-cream">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <p class="reveal text-[.8rem] text-forest/80 mb-1">Work Experience</p>
+    <h2 class="reveal font-serif text-[2.6rem] text-forest-deep font-semibold mb-14">My Career Journey</h2>
+
+    <div class="relative" id="timeline">
+      <!-- line -->
+      <div class="absolute left-[7px] top-2 bottom-2 w-px bg-sage-soft"></div>
+      <div id="tlLine" class="absolute left-[7px] top-2 bottom-2 w-px bg-forest origin-top scale-y-0"></div>
+
+      <!-- 01 -->
+      <article class="tl-item relative grid md:grid-cols-[170px_56px_1fr_220px] gap-x-4 gap-y-3 py-8 pl-8 md:pl-8 border-b border-sage-soft/70">
+        <span class="tl-dot absolute left-0 top-[2.4rem] w-[15px] h-[15px] rounded-full bg-forest ring-4 ring-cream"></span>
+        <p class="text-[.78rem] text-ink/80 leading-5">June 2023 –<br/>Present</p>
+        <span class="num w-11 h-11 rounded-full bg-paper border border-sage-soft grid place-items-center font-serif text-lg text-forest-deep shadow-sm">01</span>
+        <div>
+          <h3 class="text-[.92rem] font-semibold text-forest-deep">CFM Analyst <span class="font-normal text-ink/80">— Accenture Inc.</span></h3>
+          <ul class="bullet mt-2 space-y-1 text-[.72rem] text-ink/75 leading-5">
+            <li>Managed and processed client payments, maintaining accurate financial documentation.</li>
+            <li>Handled PH and APAC client portfolios, including client correspondence via email and calls.</li>
+            <li>Prepared aging reports and macros for Accounts Receivable.</li>
+            <li>Assisted in semi-monthly leadership meetings and prepared portfolio reports.</li>
+            <li>Utilized SAP for financial operations and reporting.</li>
+            <li>Verified Form 2307 certificates submitted by clients.</li>
+          </ul>
+        </div>
+        <div class="hidden md:flex justify-center items-center"><svg class="float w-36" data-d="1" viewBox="0 0 120 90"><use href="#i-laptop"/></svg></div>
+      </article>
+
+      <!-- 02 -->
+      <article class="tl-item relative grid md:grid-cols-[170px_56px_1fr_220px] gap-x-4 gap-y-3 py-8 pl-8 border-b border-sage-soft/70">
+        <span class="tl-dot absolute left-0 top-[2.4rem] w-[15px] h-[15px] rounded-full bg-forest ring-4 ring-cream"></span>
+        <p class="text-[.78rem] text-ink/80 leading-5">April 2019 –<br/>June 2023</p>
+        <span class="num w-11 h-11 rounded-full bg-paper border border-sage-soft grid place-items-center font-serif text-lg text-forest-deep shadow-sm">02</span>
+        <div>
+          <h3 class="text-[.92rem] font-semibold text-forest-deep">Senior Accounts Receivable Specialist <span class="font-normal text-ink/80">— Movious Construction and Development Inc.</span></h3>
+          <ul class="bullet mt-2 space-y-1 text-[.72rem] text-ink/75 leading-5">
+            <li>Prepared and processed checks for suppliers and subcontractors, ensuring timely payments.</li>
+            <li>Managed reimbursements, insurance payments, and eFPS filing.</li>
+            <li>Handled cash/check vouchers, petty cash releases, and aging reports.</li>
+            <li>Produced official receipts, accounts receivable documents, and billing invoices; managed collection efforts.</li>
+          </ul>
+        </div>
+        <div class="hidden md:flex justify-center items-center gap-3">
+          <svg class="float w-16" data-d="2" viewBox="0 0 90 110"><use href="#i-doc"/></svg>
+          <svg class="float w-14" data-d="3" viewBox="0 0 80 100"><use href="#i-calc"/></svg>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="tl-item relative grid md:grid-cols-[170px_56px_1fr_220px] gap-x-4 gap-y-3 py-8 pl-8 border-b border-sage-soft/70">
+        <span class="tl-dot absolute left-0 top-[2.4rem] w-[15px] h-[15px] rounded-full bg-paper border-2 border-forest ring-4 ring-cream"></span>
+        <p class="text-[.78rem] text-ink/80 leading-5">November 2018 –<br/>April 2019</p>
+        <span class="num w-11 h-11 rounded-full bg-paper border border-sage-soft grid place-items-center font-serif text-lg text-forest-deep shadow-sm">03</span>
+        <div>
+          <h3 class="text-[.92rem] font-semibold text-forest-deep">Accounting Assistant <span class="font-normal text-ink/80">— Multiplex Metals Inc., Makati City</span></h3>
+          <ul class="bullet mt-2 space-y-1 text-[.72rem] text-ink/75 leading-5">
+            <li>Prepared payment vouchers, journal vouchers, and eFPS filings.</li>
+            <li>Assisted in inventory management and monthly financial reporting.</li>
+          </ul>
+        </div>
+        <div class="hidden md:flex justify-center items-center gap-1">
+          <svg class="float w-12" data-d="1" viewBox="0 0 70 100"><use href="#i-folder"/></svg>
+          <svg class="float w-12" data-d="2" viewBox="0 0 70 100"><use href="#i-folder"/></svg>
+          <svg class="float w-12" data-d="3" viewBox="0 0 70 100"><use href="#i-folder"/></svg>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="tl-item relative grid md:grid-cols-[170px_56px_1fr_220px] gap-x-4 gap-y-3 py-8 pl-8 border-b border-sage-soft/70">
+        <span class="tl-dot absolute left-0 top-[2.4rem] w-[15px] h-[15px] rounded-full bg-forest ring-4 ring-cream"></span>
+        <p class="text-[.78rem] text-ink/80 leading-5">January 2018 –<br/>June 2018</p>
+        <span class="num w-11 h-11 rounded-full bg-paper border border-sage-soft grid place-items-center font-serif text-lg text-forest-deep shadow-sm">04</span>
+        <div>
+          <h3 class="text-[.92rem] font-semibold text-forest-deep">Associate — Operations <span class="font-normal text-ink/80">— WNS, Quezon City</span></h3>
+          <ul class="bullet mt-2 space-y-1 text-[.72rem] text-ink/75 leading-5">
+            <li>Utilized Oracle system to process and manage financial transactions.</li>
+            <li>Validated international cheques by matching them against corresponding invoices.</li>
+            <li>Ensured accuracy and completeness of payment details and supporting documents.</li>
+            <li>Investigated and resolved discrepancies between cheques and invoices.</li>
+            <li>Coordinated with team members to maintain accurate financial records.</li>
+            <li>Generated and analyzed balance reports to support daily operations and reconciliation.</li>
+          </ul>
+        </div>
+        <div class="hidden md:flex justify-center items-center gap-2">
+          <svg class="float w-20" data-d="2" viewBox="0 0 100 100"><use href="#i-globe"/></svg>
+          <svg class="float w-14" data-d="1" viewBox="0 0 80 80"><use href="#i-coins"/></svg>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article class="tl-item relative grid md:grid-cols-[170px_56px_1fr_220px] gap-x-4 gap-y-3 py-8 pl-8">
+        <span class="tl-dot absolute left-0 top-[2.4rem] w-[15px] h-[15px] rounded-full bg-paper border-2 border-forest ring-4 ring-cream"></span>
+        <p class="text-[.78rem] text-ink/80 leading-5">May 2017 –<br/>January 2018</p>
+        <span class="num w-11 h-11 rounded-full bg-paper border border-sage-soft grid place-items-center font-serif text-lg text-forest-deep shadow-sm">05</span>
+        <div>
+          <h3 class="text-[.92rem] font-semibold text-forest-deep">Accounting Officer <span class="font-normal text-ink/80">— GTI Transport Services Inc., Cainta, Rizal</span></h3>
+          <ul class="bullet mt-2 space-y-1 text-[.72rem] text-ink/75 leading-5">
+            <li>Prepared employee payroll, including accurate computation of government-mandated benefits (SSS, PhilHealth, and Pag-IBIG).</li>
+            <li>Processed and filed government benefit contributions and related documents.</li>
+            <li>Reviewed and verified receipts and supporting documents for accuracy and completeness.</li>
+            <li>Prepared payment vouchers and ensured proper documentation of all transactions.</li>
+            <li>Handled VAT relief preparation and reporting.</li>
+            <li>Maintained organized financial records in compliance with company and government requirements.</li>
+          </ul>
+        </div>
+        <div class="hidden md:flex justify-center items-center gap-2">
+          <svg class="float w-14" data-d="1" viewBox="0 0 80 100"><use href="#i-calc"/></svg>
+          <svg class="float w-14" data-d="3" viewBox="0 0 80 80"><use href="#i-coins"/></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION / CERT / REFERENCES ============ -->
+<section id="education" class="py-16 bg-paper border-t border-sage-soft">
+  <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-3 gap-10 md:divide-x divide-sage-soft">
+    <div class="reveal flex gap-4 md:pr-6">
+      <span class="w-12 h-12 rounded-full bg-sage-soft grid place-items-center flex-none text-forest">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg></span>
+      <div>
+        <h3 class="font-medium text-[.9rem] text-forest-deep mb-3">Education</h3>
+        <p class="text-[.78rem] font-semibold">Bachelor of Science in Accountancy</p>
+        <p class="text-[.7rem] text-muted mt-1">ICCT Colleges, Cainta, Rizal</p>
+        <p class="text-[.7rem] text-ink/70 mt-3 leading-5">Demonstrated high academic performance and a commitment to excellence in all accounting-related subjects.</p>
+      </div>
+    </div>
+    <div class="reveal flex gap-4 md:px-8">
+      <span class="w-12 h-12 rounded-full bg-sage-soft grid place-items-center flex-none text-forest">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span>
+      <div>
+        <h3 class="font-medium text-[.9rem] text-forest-deep mb-3">Certification</h3>
+        <p class="text-[.78rem] font-semibold leading-5">Reinvention with Agentic AI Learning Program</p>
+        <p class="text-[.62rem] text-muted mt-3 break-all">Certificate reference/file name: ReinventionwithAgenticAILearningProgramCertificate20260219</p>
+      </div>
+    </div>
+    <div class="reveal flex gap-4 md:pl-8" id="contact-refs">
+      <span class="w-12 h-12 rounded-full bg-sage-soft grid place-items-center flex-none text-forest">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></svg></span>
+      <div>
+        <h3 class="font-medium text-[.9rem] text-forest-deep mb-3">Character References</h3>
+        <p class="text-[.78rem] font-semibold">Precious Jimmabelle Laza</p>
+        <p class="text-[.68rem] text-muted">Manager | International SOS</p>
+        <p class="text-[.68rem] text-muted mb-4">Phone: 09955317960</p>
+        <p class="text-[.78rem] font-semibold">Jolina Damaso</p>
+        <p class="text-[.68rem] text-muted">Grandspan Development Corporation</p>
+        <p class="text-[.68rem] text-muted">Phone: 09197399975</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-20 bg-cream relative overflow-hidden">
+  <div class="max-w-[900px] mx-auto px-6 text-center">
+    <p class="reveal text-[.8rem] text-forest/80 mb-1">Get In Touch</p>
+    <h2 class="reveal font-serif text-[2.6rem] text-forest-deep font-semibold">Let’s Work Together</h2>
+    <div class="reveal mt-8 flex flex-wrap justify-center gap-4">
+      <a href="mailto:dizachua.1113@gmail.com" class="btn-primary magnetic">dizachua.1113@gmail.com</a>
+      <a href="tel:09382189107" class="btn-outline magnetic">09382189107</a>
+      <a href="https://www.linkedin.com/in/judiza-chua-3b2a91280/" target="_blank" rel="noopener" class="btn-outline magnetic">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-forest-deep text-white">
+  <div class="max-w-[1200px] mx-auto px-6 h-[80px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="font-serif text-3xl">JC</span>
+      <span class="text-[.62rem] tracking-[.3em] uppercase text-white/80">Judiza Susaya Chua</span>
+    </div>
+    <p class="font-script text-[.8rem] text-white/80">Thank you for visiting my portfolio ♡</p>
+  </div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Mobile menu ---------- */
+const mm = document.getElementById("mobileMenu");
+document.getElementById("menuBtn").addEventListener("click", () => mm.classList.toggle("hidden"));
+mm.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mm.classList.add("hidden")));
+
+/* ---------- Nav background on scroll + progress bar ---------- */
+const nav = document.getElementById("nav");
+ScrollTrigger.create({
+  start: 40,
+  onUpdate: self => {
+    const scrolled = self.scroll() > 40;
+    nav.classList.toggle("bg-paper/90", scrolled);
+    nav.classList.toggle("backdrop-blur-md", scrolled);
+    nav.classList.toggle("shadow-sm", scrolled);
+  }
+});
+gsap.to("#progress", { scaleX: 1, ease: "none",
+  scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 } });
+
+/* ---------- Active nav link ---------- */
+document.querySelectorAll("section[id]").forEach(sec => {
+  ScrollTrigger.create({
+    trigger: sec, start: "top 50%", end: "bottom 50%",
+    onToggle: self => {
+      if (!self.isActive) return;
+      document.querySelectorAll(".nav-link").forEach(l =>
+        l.classList.toggle("active", l.getAttribute("href") === "#" + sec.id));
+    }
+  });
+});
+
+if (!reduce) {
+  /* ---------- Hero intro timeline ---------- */
+  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  tl.from(".name-line", { yPercent: 110, duration: 1, stagger: 0.15 })
+    .from(".hero-in", { y: 24, opacity: 0, duration: 0.8, stagger: 0.12 }, "-=0.6")
+    .from("#heroCircle", { scale: 0.6, opacity: 0, duration: 1.2, ease: "back.out(1.4)" }, 0.2)
+    .from("#portrait", { y: 90, opacity: 0, duration: 1.1 }, 0.5)
+    .from("#tagline", { opacity: 0, x: 30, duration: 1 }, 1.2)
+    .from("#nav > div > *", { y: -20, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.2);
+
+  /* ---------- Scroll-down indicator ---------- */
+  gsap.fromTo("#scrollDot", { y: -20 }, { y: 56, duration: 1.4, repeat: -1, ease: "power1.inOut" });
+
+  /* ---------- Floating objects (continuous) ---------- */
+  document.querySelectorAll(".float").forEach(el => {
+    const d = +el.dataset.d || 1;
+    gsap.to(el, {
+      y: gsap.utils.random(-14, -22) * (d / 2 + 0.5),
+      x: gsap.utils.random(-6, 6),
+      rotation: gsap.utils.random(-5, 5),
+      duration: gsap.utils.random(2.4, 4) ,
+      repeat: -1, yoyo: true, ease: "sine.inOut", delay: d * 0.2
+    });
+  });
+
+  /* ---------- Hero parallax ---------- */
+  gsap.to("#heroCircle", { yPercent: 12, ease: "none",
+    scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: true } });
+  gsap.to("#portrait", { yPercent: 6, ease: "none",
+    scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: true } });
+
+  /* ---------- Generic reveals ---------- */
+  gsap.utils.toArray(".reveal").forEach((el, i) => {
+    gsap.from(el, { y: 40, opacity: 0, duration: 0.9, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none reverse" } });
+  });
+
+  /* ---------- Skills stagger ---------- */
+  gsap.from(".skill", { x: -30, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power2.out",
+    scrollTrigger: { trigger: "#skillList", start: "top 85%" } });
+
+  /* ---------- Counters ---------- */
+  document.querySelectorAll(".count").forEach(el => {
+    const obj = { v: 0 };
+    gsap.to(obj, { v: +el.dataset.to, duration: 2, ease: "power1.out",
+      onUpdate: () => el.textContent = Math.round(obj.v),
+      scrollTrigger: { trigger: el, start: "top 90%", once: true } });
+  });
+
+  /* ---------- Timeline ---------- */
+  gsap.to("#tlLine", { scaleY: 1, ease: "none",
+    scrollTrigger: { trigger: "#timeline", start: "top 70%", end: "bottom 70%", scrub: 0.4 } });
+
+  gsap.utils.toArray(".tl-item").forEach(item => {
+    const t = gsap.timeline({ scrollTrigger: { trigger: item, start: "top 82%", toggleActions: "play none none reverse" } });
+    t.from(item.querySelector(".tl-dot"), { scale: 0, duration: 0.5, ease: "back.out(3)" })
+     .from(item.querySelector(".num"), { scale: 0.4, opacity: 0, rotate: -90, duration: 0.6, ease: "back.out(2)" }, "<0.1")
+     .from(item.querySelector("p"), { x: -25, opacity: 0, duration: 0.6 }, "<")
+     .from(item.querySelector("h3"), { y: 20, opacity: 0, duration: 0.6 }, "<0.1")
+     .from(item.querySelectorAll("li"), { x: 20, opacity: 0, duration: 0.5, stagger: 0.07 }, "<0.15")
+     .from(item.querySelectorAll("svg.float"), { scale: 0, opacity: 0, rotate: -20, duration: 0.7, stagger: 0.1, ease: "back.out(2)" }, "<0.1");
+  });
+
+  /* ---------- Magnetic buttons ---------- */
+  document.querySelectorAll(".magnetic").forEach(btn => {
+    btn.addEventListener("mousemove", e => {
+      const r = btn.getBoundingClientRect();
+      gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.25, y: (e.clientY - r.top - r.height / 2) * 0.35, duration: 0.3 });
+    });
+    btn.addEventListener("mouseleave", () => gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1,0.4)" }));
+  });
+
+  /* ---------- Footer ---------- */
+  gsap.from("footer > div > *", { y: 20, opacity: 0, duration: 0.8, stagger: 0.15,
+    scrollTrigger: { trigger: "footer", start: "top 95%" } });
+} else {
+  document.querySelectorAll(".count").forEach(el => el.textContent = el.dataset.to);
+}
+</script>
+</body>
+</html>
